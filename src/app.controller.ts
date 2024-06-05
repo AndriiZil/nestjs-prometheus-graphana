@@ -10,4 +10,9 @@ export class AppController {
     this.metricsService.incrementRequestCounter();
     return 'Hello, Prometheus!';
   }
+
+  @Get('metrics')
+  metrics() {
+    return this.metricsService.getMetrics();
+  }
 }
